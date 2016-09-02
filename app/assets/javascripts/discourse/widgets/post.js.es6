@@ -91,7 +91,7 @@ createWidget('post-avatar', {
       body = avatarFor.call(this, this.settings.size, {
         template: attrs.avatar_template,
         username: attrs.username,
-        url: attrs.usernameUrl,
+        url: "/forum" + attrs.usernameUrl.toLowerCase(),
         className: 'main-avatar'
       });
     }

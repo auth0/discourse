@@ -1,9 +1,10 @@
 import { autoUpdatingRelativeAge } from 'discourse/lib/formatter';
 
 export function actionDescriptionHtml(actionCode, createdAt, username) {
+  const lowerCaseUsername = username.toLowerCase();
   const dt = new Date(createdAt);
   const when = autoUpdatingRelativeAge(dt, { format: 'medium-with-ago' });
-  const who = username ? `<a class="mention" href="/forum/users/${username}">@${username}</a>` : "";
+  const who = username ? `<a class="mention" href="/forum/users/${lowerCaseUsername}">@${username}</a>` : "";
   return I18n.t(`action_codes.${actionCode}`, { who, when }).htmlSafe();
 }
 

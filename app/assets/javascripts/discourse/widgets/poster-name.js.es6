@@ -18,7 +18,7 @@ export default createWidget('poster-name', {
 
   userLink(attrs, text) {
     return h('a', { attributes: {
-      href: attrs.usernameUrl,
+      href: "/forum" + attrs.usernameUrl.toLowerCase(),
       'data-auto-route': true,
       'data-user-card': attrs.username
     } }, text);
